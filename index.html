@@ -303,7 +303,7 @@
             <div class="hidden lg:block flex-1"></div>
 
             <div class="flex items-center gap-6">
-                <button onclick="openQrPassportModal()" class="text-[10px] font-modern font-medium uppercase tracking-[0.22em] text-charcoal/70 hover:text-charcoal border-b border-charcoal/20 hover:border-charcoal pb-0.5 transition">
+                <button type="button" class="text-[10px] font-modern font-medium uppercase tracking-[0.22em] text-charcoal/50 border-b border-charcoal/15 pb-0.5 pointer-events-none cursor-default select-none">
                     <span data-i18n="nav_qr_pass">Passeport QR</span>
                 </button>
             </div>
@@ -866,8 +866,8 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-transparent to-transparent"></div>
                     <div class="absolute bottom-4 left-5 right-5 flex items-center justify-between text-xs">
                         <span class="font-medium text-brassLight"><i class="fa-solid fa-fire-burner mr-1.5 text-brass"></i> <span data-i18n="atelier_img_caption">Cire officielle Barbour 6oz Sylkoil &amp; Thornproof</span></span>
-                        <button onclick="openQrPassportModal()" class="bg-cream text-racingGreen px-3 py-1.5 rounded-sm font-bold hover:bg-brass transition text-xs">
-                            <i class="fa-solid fa-qrcode mr-1 text-mahogany"></i> <span data-i18n="atelier_qr_btn">Voir le QR Comptoir</span>
+                        <button type="button" class="bg-cream/70 text-racingGreen/70 px-3 py-1.5 rounded-sm font-bold text-xs pointer-events-none cursor-default select-none">
+                            <i class="fa-solid fa-qrcode mr-1 text-mahogany/70"></i> <span data-i18n="atelier_qr_btn">Voir le QR Comptoir</span>
                         </button>
                     </div>
                 </div>
@@ -4802,7 +4802,11 @@
         }
 
         // --- 6. UTILITAIRES & MODALES ---
-        function openQrPassportModal() { document.getElementById('qr-modal').classList.remove('hidden'); }
+        function openQrPassportModal() { 
+            // Bouton temporairement non cliquable
+            return false;
+            // document.getElementById('qr-modal').classList.remove('hidden'); 
+        }
         function closeQrModal() { document.getElementById('qr-modal').classList.add('hidden'); }
         function openSizeGuideModal() { document.getElementById('size-modal').classList.remove('hidden'); }
         function closeSizeGuideModal() { document.getElementById('size-modal').classList.add('hidden'); }
@@ -4952,7 +4956,7 @@
                 <p class="text-[9px] font-modern uppercase tracking-[0.3em] text-charcoal/40 mb-3">La Maison &amp; Services</p>
                 <button type="button" onclick="openBoutiques(); closeMobileMenu();" class="block text-left text-xs font-modern uppercase tracking-[0.22em] text-charcoal/80 hover:text-charcoal" data-i18n="topbar_boutiques">Nos 5 Boutiques</button>
                 <button type="button" onclick="openAtelier(); closeMobileMenu();" class="block text-left text-xs font-modern uppercase tracking-[0.22em] text-charcoal/80 hover:text-charcoal" data-i18n="footer_atelier">Atelier Re-Waxing Barbour</button>
-                <button type="button" onclick="openQrPassportModal(); closeMobileMenu();" class="block text-left text-xs font-modern uppercase tracking-[0.22em] text-charcoal/80 hover:text-charcoal" data-i18n="nav_qr_pass">Passeport QR &amp; Suivi</button>
+                <button type="button" class="block text-left text-xs font-modern uppercase tracking-[0.22em] text-charcoal/50 pointer-events-none cursor-default select-none" data-i18n="nav_qr_pass">Passeport QR &amp; Suivi</button>
             </div>
         </div>
 
